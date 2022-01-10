@@ -71,8 +71,8 @@ public class Offerte {
     /**
      * kalkuliert den Preis mit Mehrwertsteuer
      */
-    public Double getTotalPreis(){
-        return preis + (preis*mehrwertsteuer)/100;
+    public Double getTotalPreis() {
+        return preis + (preis * mehrwertsteuer) / 100;
     }
 
     @Override

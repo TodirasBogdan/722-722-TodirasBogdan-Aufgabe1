@@ -17,7 +17,7 @@ public class Service {
     /**
      * gibt den top der Orte nach Einkommen
      */
-    public String getTopOrte(List<Offerte> offerteList){
+    public String getTopOrte(List<Offerte> offerteList) {
         Map.Entry<Ort, Long> maxLocation = offerteList.stream()
                 .collect(Collectors.groupingBy(Offerte::getOrt, Collectors.counting()))
                 .entrySet().stream()
