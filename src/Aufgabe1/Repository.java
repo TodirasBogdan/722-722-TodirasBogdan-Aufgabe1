@@ -6,6 +6,9 @@ import java.util.List;
 
 public class Repository {
 
+    /**
+     * liest von Textdatei
+     */
     public List<Offerte> readFromFile(String fileName, String character) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName));
         String line = bufferedReader.readLine();
@@ -22,10 +25,22 @@ public class Repository {
         return offerteList;
     }
 
+    /**
+     * schreibt in TextDatei
+     */
     public void writeToFile(String fileName, List<Offerte> liste, String character) throws IOException {
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName));
         for (Offerte offerte : liste) {
             String line = offerte.getId() + character + offerte.getUnternehmensname() + character + offerte.getPreis() + character + offerte.getMehrwertsteuer() + character + offerte.getAdresse() + character + offerte.getOrt();
+            bufferedWriter.write(line);
+            bufferedWriter.newLine();
+        }
+        bufferedWriter.close();
+    }
+
+    public void writeToFile2(String fileName, List<String> liste, String character) throws IOException {
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName));
+        for (String line : liste) {
             bufferedWriter.write(line);
             bufferedWriter.newLine();
         }

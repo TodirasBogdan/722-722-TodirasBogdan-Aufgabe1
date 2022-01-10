@@ -68,6 +68,13 @@ public class Offerte {
         this.ort = ort;
     }
 
+    /**
+     * kalkuliert den Preis mit Mehrwertsteuer
+     */
+    public Double getTotalPreis(){
+        return preis + (preis*mehrwertsteuer)/100;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
